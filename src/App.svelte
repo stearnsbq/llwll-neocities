@@ -1,65 +1,70 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
+    import artist_logo from './assets/llwll.jpg'
+
+    const links = [
+        {url: 'https://twitter.com/llwlll__/', label: 'Twitter', icon: 'icons/twitter.svg'},
+        {url: 'https://www.patreon.com/llwll/', label: 'Patreon', icon: 'icons/patreon.svg'},
+        {url: 'https://llwll.bandcamp.com/', label: 'Bandcamp', icon: 'icons/bandcamp.svg'},
+        {url: 'https://open.spotify.com/artist/6JwRFnmMxmWcYribpIJbcS', label: 'Spotify', icon: 'icons/spotify.svg'},
+        {url: 'https://soundcloud.com/llwll', label: 'Soundcloud', icon: 'icons/soundcloud.svg'},
+    ]
+
+
 </script>
 
-<main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello Typescript!</h1>
+<main class="main-content">
 
-  <Counter />
+    <div class="artist-content">
 
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
+        <div class="artist-image">
+            <img alt="llwll image" src={artist_logo} />
+        </div>
+    
+    
+        <div class="artist-links">
+            {#each links as link }
+    
+            <div class="link">
+                <img src={link.icon} alt={link.label}>
+                <a href={link.url}>{link.label}</a>
+            </div>
+                
+            {/each}
+    
+        </div>
+    
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
+    </div>
+
+
+    
 </main>
 
-<style>
-  :root {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+<style lang="scss">
 
-  main {
-    text-align: center;
-    padding: 1em;
-    margin: 0 auto;
-  }
-
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
+    .artist-image{
+        img{
+            border-radius: 50%;
+        }
     }
 
-    p {
-      max-width: none;
+    .main-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
     }
-  }
+
+    .artist-links{
+
+        .link{
+            img{
+                height: 25px;
+            }
+        }
+
+
+    }
+
 </style>
