@@ -1,4 +1,5 @@
 <script lang="ts">
+  import MetalHeart from './components/metalheart.svelte'
   import artist_logo from "./assets/llwll.jpg";
 
   const links = [
@@ -40,7 +41,11 @@
 </script>
 
 <main class="main-content">
-  <div class="artist-content">
+
+  <MetalHeart/>
+
+
+  <!-- <div class="artist-content">
     <div class="artist-image">
       <img alt="llwll image" src={artist_logo} />
     </div>
@@ -55,7 +60,7 @@
         </div>
       {/each}
     </div>
-  </div>
+  </div> -->
 </main>
 
 <style lang="scss">
